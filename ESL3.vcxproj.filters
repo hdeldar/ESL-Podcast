@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{cb85a964-cde9-4a4c-9b41-0256a46303a8}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{e1dd31c5-755a-46da-991e-f175291fa87d}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BinFileWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlogModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoryModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ESLDbDataProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ESLFileDataProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GlossaryModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PodcastModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QPodcastTableViewDelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SqliteDataProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_BinFileWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_BinFileWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_BlogModel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_BlogModel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_CategoryModel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_CategoryModel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_GlossaryModel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_GlossaryModel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_IESL.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_IESL.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_PodcastModel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_PodcastModel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QPodcastTableViewDelegate.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QPodcastTableViewDelegate.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mainwindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mainwindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_qrc.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="BinFileWindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="BlogModel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CategoryModel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="ESLDbDataProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ESLFileDataProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="GlossaryModel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="IDbDataProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="IESL.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="Icon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="PodcastModel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QPodcastTableViewDelegate.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="SqliteDataProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="(2).png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\1.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\2.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\3.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\4.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\5.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\6.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\7.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\8.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\9.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ESL3.rc">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\Screenshot_????-??-??-??-??-??.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\allCat.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cafe.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\english">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="esl.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\eslpod.ir-email.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\eslpod.ir.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\filetype_mov.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\filter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\gnome_audio_x_generic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\header_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\home-page.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\mp3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\mp3">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\new_logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\ogg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\pause.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\pause_mo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\play_mo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="qrc.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="resources\images\speaker_off.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\speaker_off_mo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\volume.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\volume_mo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\wav.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png" />
+    <None Include="resources\images\Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\english cafe.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\mp3 (2).png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/images/1.jpg</file>
+        <file>resources/images/2.jpg</file>
+        <file>resources/images/3.jpg</file>
+        <file>resources/images/4.jpg</file>
+        <file>resources/images/5.jpg</file>
+        <file>resources/images/6.jpg</file>
+        <file>resources/images/7.jpg</file>
+        <file>resources/images/8.jpg</file>
+        <file>resources/images/9.jpg</file>
+        <file>resources/images/allCat.png</file>
+        <file>resources/images/english cafe.jpg</file>
+        <file>resources/images/filetype_mov.png</file>
+        <file>resources/images/filter.png</file>
+        <file>resources/images/gnome_audio_x_generic.png</file>
+        <file>resources/images/header_bg.jpg</file>
+        <file>resources/images/home-page.png</file>
+        <file>resources/images/mp3 (2).png</file>
+        <file>resources/images/mp3.png</file>
+        <file>resources/images/new_logo.png</file>
+        <file>resources/images/ogg.png</file>
+        <file>resources/images/speaker_off.png</file>
+        <file>resources/images/speaker_off_mo.png</file>
+        <file>resources/images/volume.png</file>
+        <file>resources/images/volume_mo.png</file>
+        <file>resources/images/wav.png</file>
+        <file>resources/images/play.png</file>
+        <file>resources/images/pause.png</file>
+        <file>resources/images/pause_mo.png</file>
+        <file>resources/images/play_mo.png</file>
+        <file>resources/images/Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png</file>
+        <file>resources/images/Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png</file>
+        <file>resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png</file>
+        <file>resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png</file>
+        <file>resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png</file>
+        <file>resources/images/eslpod.ir.png</file>
+        <file>resources/images/eslpod.ir-email.png</file>
+        <file>esl.ico</file>
+        <file>ESL3.rc</file>
+    </qresource>
+</RCC>
