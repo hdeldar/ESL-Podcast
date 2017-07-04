@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="(2).png" />
+    <None Include="README.md" />
     <None Include="resources\images\1.jpg">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
