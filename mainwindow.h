@@ -43,7 +43,10 @@ private:
     QString convertTime(qint64 num);
 
     void showPodcastInfo();
-
+    QString getUserNote(int podcastId);
+    void setUserNote(int podcastId, QString note);
+    void serialize();
+    virtual void closeEvent(QCloseEvent *event) override;
 public slots:
     void onPodcastDblClicked(QModelIndex index);
     void onSearch(QString);
@@ -67,6 +70,7 @@ public slots:
 
     void onBtnDemoClicked();
     
+    void onUserNoteTextChanged();
 private:
     Ui::MainWindow *ui;
     IESL *m_pEslDataProvider;
@@ -80,23 +84,23 @@ private:
 
     QList<ESLBlog> m_blogList;
 
-    int m_selectedCat;
-    int m_selectedYear;
+    int m_selectedCat = 0;
+    int m_selectedYear = 0;
     QString m_filterWord;
 
-    int m_currentPost;
-    int m_postFontSize;
+    int m_currentPost = 0;
+    int m_postFontSize = 0;
 
-    bool m_firstTime;
+    bool m_firstTime = false;
 
     QMediaPlayer *m_pPlayer;
     qint64 m_totalTime;
 
-    int m_podId;
+    int m_podId = 0;
     QString m_title;
     QString m_script;
     QString m_cultureNote;
-
+    QList<ESLPodcastUserNote> m_userNotes;
 };
 
 #endif // MAINWINDOW_H

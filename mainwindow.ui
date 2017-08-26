@@ -701,7 +701,7 @@ p, li { white-space: pre-wrap; }
 &lt;p dir='rtl' style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'tahoma,Arial,sans-serif'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'tahoma,Arial,sans-serif'; font-size:11pt;&quot;&gt;تصاویری از نسخه موبایلی&lt;/span&gt;&lt;/p&gt;
 &lt;p dir='rtl' style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'tahoma,Arial,sans-serif'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; dir='rtl' style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/span&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۲۰-۰۰-۱۹.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۱۷-۰۱-۲۶.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۳-۱۹-۳۳-۴۰.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۰۵.png&quot; /&gt;&lt;img src=&quot;:/resources/images/Screenshot_۲۰۱۳-۰۷-۱۴-۱۶-۰۶-۳۴.png&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="openExternalLinks">
               <bool>true</bool>
@@ -812,8 +812,8 @@ p, li { white-space: pre-wrap; }
    <slot>onPodcastDblClicked(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
-     <y>200</y>
+     <x>101</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
      <x>450</x>
@@ -828,8 +828,8 @@ p, li { white-space: pre-wrap; }
    <slot>onCategoryClicked(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>139</x>
-     <y>164</y>
+     <x>141</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -844,8 +844,8 @@ p, li { white-space: pre-wrap; }
    <slot>onSearch(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>438</x>
-     <y>136</y>
+     <x>101</x>
+     <y>145</y>
     </hint>
     <hint type="destinationlabel">
      <x>365</x>
@@ -876,8 +876,8 @@ p, li { white-space: pre-wrap; }
    <slot>onNextPost()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>233</x>
-     <y>133</y>
+     <x>101</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
      <x>184</x>
@@ -892,8 +892,8 @@ p, li { white-space: pre-wrap; }
    <slot>onChangePost(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>131</y>
+     <x>101</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel">
      <x>137</x>
@@ -908,8 +908,8 @@ p, li { white-space: pre-wrap; }
    <slot>onPlayPause()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>297</x>
-     <y>442</y>
+     <x>247</x>
+     <y>460</y>
     </hint>
     <hint type="destinationlabel">
      <x>281</x>
@@ -924,7 +924,7 @@ p, li { white-space: pre-wrap; }
    <slot>onSliderPlayerChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>266</x>
+     <x>211</x>
      <y>460</y>
     </hint>
     <hint type="destinationlabel">
@@ -940,8 +940,8 @@ p, li { white-space: pre-wrap; }
    <slot>onPostFontSizeChanged()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>546</x>
-     <y>472</y>
+     <x>751</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
      <x>553</x>
@@ -965,6 +965,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onUserNoteTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>394</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>495</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onPodcastDblClicked(QModelIndex)</slot>
@@ -977,5 +993,6 @@ p, li { white-space: pre-wrap; }
   <slot>onPlayPause()</slot>
   <slot>onSliderPlayerChanged(int)</slot>
   <slot>onBtnDemoClicked()</slot>
+  <slot>onUserNoteTextChanged()</slot>
  </slots>
 </ui>

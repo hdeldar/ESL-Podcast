@@ -80,6 +80,7 @@ void MainWindow::filterPodcastByTitle()
 {
     QList<ESLPodcast> pods = m_pEslDataProvider->filterPodcastsByTitle(
                 m_filterWord, m_selectedCat, m_selectedYear);
+    m_userNotes = m_pEslDataProvider->getUserNotes();
     m_pPodcastModel->setItemList(pods);
     m_pPodcastDeleagte->setFilterText(m_filterWord);
     ui->tableView_podcast_list->setModel(m_pPodcastModel);
@@ -218,8 +219,61 @@ void MainWindow::showPodcastInfo()
                 .arg(m_postFontSize + 2);
     }
     ui->textBrowser_glossary->setHtml(glossHtml);
+    ui->textEdit->setText(getUserNote(m_podId));
 }
 
+
+QString MainWindow::getUserNote(int podcastId)
+{
+   for (auto u : m_userNotes)
+   {
+      if (u.id() == podcastId)
+         return u.note();
+   }
+   return "";
+}
+
+void MainWindow::setUserNote(int podcastId, QString note)
+{
+   if(note.isEmpty())
+      return;
+   bool bfind = false;
+   for (ESLPodcastUserNote& u : m_userNotes)
+   {
+      if (u.id() == podcastId)
+      {
+         bfind = true;
+         u.setNote(note);
+         break;
+      }
+   }
+   if (!bfind)
+   {
+      m_userNotes.append(ESLPodcastUserNote(podcastId, note));
+      bfind = true;
+   }
+   //if(bfind)
+   //   serialize();
+}
+
+void MainWindow::serialize()
+{
+   QString output = QCoreApplication::applicationDirPath() + "/db/UserNotes.btk";
+   QFile outUser(output);
+   if (!outUser.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+   {
+      qDebug() << "can not open output file";
+      return;
+   }
+   QDataStream dataStreamUser(&outUser);
+   dataStreamUser << m_userNotes;
+   outUser.close();
+}
+
+void MainWindow::closeEvent(QCloseEvent* event)
+{
+   serialize();
+}
 
 void MainWindow::onPodcastDblClicked(QModelIndex index)
 {
@@ -238,28 +292,28 @@ void MainWindow::onPodcastDblClicked(QModelIndex index)
     {
         m_pPlayer->setMedia(QUrl::fromLocalFile(src));
         m_pPlayer->setVolume(100);        
-        m_pPlayer->play();
+        //m_pPlayer->play();
         m_pPlayer->setPosition(0);
-        ui->btn_playPause->setStyleSheet("#btn_playPause{border:0;background-color:transparent;"
-                                         "background-image: url(:/resources/images/pause.png);"
-                                         "background-repeat:no-repeat;background-position: center center;"
-                                         "height:22px;width: 30px;}#btn_playPause:hover{"
-                                         "background-image: url(:/resources/images/pause_mo.png);"
-                                         "}");
+//        ui->btn_playPause->setStyleSheet("#btn_playPause{border:0;background-color:transparent;"
+//                                         "background-image: url(:/resources/images/pause.png);"
+//                                         "background-repeat:no-repeat;background-position: center center;"
+//                                         "height:22px;width: 30px;}#btn_playPause:hover{"
+//                                         "background-image: url(:/resources/images/pause_mo.png);"
+//                                         "}");
     }
     else {
         m_pPlayer->setMedia(NULL);
         m_pPlayer->stop();
         m_pPlayer->setPosition(0);
         ui->slider_player->setRange(0, 0);       
-        ui->btn_playPause->setStyleSheet("#btn_playPause{border:0;background-color:transparent;"
+       
+    }   
+ ui->btn_playPause->setStyleSheet("#btn_playPause{border:0;background-color:transparent;"
                                          "background-image: url(:/resources/images/play.png);"
                                          "background-repeat:no-repeat;background-position: center center;"
                                          "height:22px;width: 30px;}#btn_playPause:hover{"
                                          "background-image: url(:/resources/images/play_mo.png);"
                                          "}");
-    }   
-
 }
 
 void MainWindow::onSearch(QString word)
@@ -302,16 +356,20 @@ void MainWindow::onChangePost(int i)
 
 void MainWindow::onPostFontSizeChanged()
 {
-    m_postFontSize = ui->slider_post_zoom->value();
-    QSettings settings("ESL Podcast", "ESL Podcast");
-    settings.setValue("postFontSize", m_postFontSize);
-    showPost();
-    showPodcastInfo();
+   auto val = ui->slider_post_zoom->value();
+   if (val != m_postFontSize)
+   {
+      m_postFontSize = val;
+      QSettings settings("ESL Podcast", "ESL Podcast");
+      settings.setValue("postFontSize", m_postFontSize);
+      showPost();
+      showPodcastInfo();
+   }
 }
 
 void MainWindow::onPlayPause()
 {
-    if(m_pPlayer->state() == QMediaPlayer::PlayingState || m_pPlayer->state() == QMediaPlayer::StoppedState)
+    if(m_pPlayer->state() == QMediaPlayer::PlayingState)
     {
         m_pPlayer->pause();
         ui->btn_playPause->setStyleSheet("#btn_playPause{border:0;background-color:transparent;"
@@ -321,7 +379,7 @@ void MainWindow::onPlayPause()
                                          "background-image: url(:/resources/images/play_mo.png);"
                                          "}");
     }
-    else if(m_pPlayer->state() == QMediaPlayer::PausedState)
+    else if(m_pPlayer->state() == QMediaPlayer::PausedState || m_pPlayer->state() == QMediaPlayer::StoppedState)
     {
         m_pPlayer->play();
         ui->btn_playPause->setStyleSheet("#btn_playPause{border:0;background-color:transparent;"
@@ -362,8 +420,14 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason)
 
 void MainWindow::onBtnDemoClicked()
 {
-    QString link = "http://www.eslpod.ir";
-    QDesktopServices::openUrl(QUrl(link));
+    //QString link = "http://www.eslpod.ir";
+    //QDesktopServices::openUrl(QUrl(link));
+}
+
+void MainWindow::onUserNoteTextChanged()
+{
+   setUserNote(m_podId, ui->textEdit->toPlainText());
+   
 }
 
 QString MainWindow::convertTime(qint64 num)

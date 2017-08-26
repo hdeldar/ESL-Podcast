@@ -191,14 +191,14 @@ public:
     {
        return stream << pod.m_id << pod.m_title << pod.m_script
                         << pod.m_year << pod.m_month << pod.m_comment
-                           << pod.m_cultureNote << pod.m_categories;
+                           << pod.m_cultureNote << pod.m_categories ;
     }
     //for deserialization
     friend QDataStream& operator >>( QDataStream& stream, ESLPodcast& pod )
     {
         return stream >> pod.m_id >> pod.m_title >> pod.m_script
                          >> pod.m_year >> pod.m_month >> pod.m_comment
-                            >> pod.m_cultureNote >> pod.m_categories;
+                            >> pod.m_cultureNote >> pod.m_categories ;
     }
 
 private:
@@ -210,6 +210,53 @@ private:
     QString m_comment;
     QString m_cultureNote;
     QList<ESLCategory> m_categories;
+};
+
+class ESLPodcastUserNote : QObject
+{
+	Q_OBJECT
+public:
+	explicit ESLPodcastUserNote(QObject *parent = 0) : QObject(parent), m_ESLPodcastId(0)
+	{
+	}
+
+   ESLPodcastUserNote(int id, QString note, QObject *parent = 0) 
+   : QObject(parent)
+   , m_ESLPodcastId(id)
+   , m_userNotes(note)
+   {
+   }
+
+	ESLPodcastUserNote(const ESLPodcastUserNote &copy)
+		: QObject() {
+		*this = copy;
+	}
+
+	ESLPodcastUserNote &operator =(const ESLPodcastUserNote &other)
+	{
+		m_ESLPodcastId = other.id();
+		m_userNotes = other.note();
+		return *this;
+	}
+	//for serialization
+	friend QDataStream& operator <<(QDataStream& stream, const ESLPodcastUserNote& pod)
+	{
+		return stream << pod.m_ESLPodcastId << pod.m_userNotes ;
+	}
+	//for deserialization
+	friend QDataStream& operator >> (QDataStream& stream, ESLPodcastUserNote& pod)
+	{
+		return stream >> pod.m_ESLPodcastId >> pod.m_userNotes ;
+	}
+
+	int id() const { return m_ESLPodcastId; }
+	void setId(int id) { m_ESLPodcastId = id; }
+	QString note() const { return m_userNotes; }
+	void setNote(const QString &cultureNote) { m_userNotes = cultureNote; }
+
+private:
+	int m_ESLPodcastId;
+	QString m_userNotes;
 };
 
 //=======================================================
@@ -296,6 +343,7 @@ public:
     virtual QList<ESLBlog> getBlogPosts() = 0;
     virtual ESLBlog getBlogPost(int id) = 0;
     virtual QList<ESLBlog> searchInBlogPosts(const QString &phrase) = 0;
+    virtual QList<ESLPodcastUserNote> getUserNotes() = 0;
 };
 
 #endif // IESL_H

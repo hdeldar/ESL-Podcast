@@ -145,4 +145,20 @@ void ESLFileDataProvider::init()
      {
          m_podcasts[i].setCategories(m_podCategories[m_podcasts[i].id()]);
      }
+     output = QCoreApplication::applicationDirPath() + "/db/UserNotes.btk";
+     QFile outUser(output);
+     if (!outUser.open(QIODevice::ReadOnly | QIODevice::Text))
+     {
+        qDebug() << "can not open output file";
+        return;
+     }
+     QDataStream dataStreamUser(&outUser);
+     dataStreamUser >> m_userNotes;
+     outUser.close();
+
+}
+
+QList<ESLPodcastUserNote> ESLFileDataProvider::getUserNotes()
+{
+   return m_userNotes;
 }

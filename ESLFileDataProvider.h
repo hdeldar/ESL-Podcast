@@ -26,7 +26,7 @@ public:
     virtual QList<ESLBlog> getBlogPosts();
     virtual ESLBlog getBlogPost(int id);
     virtual QList<ESLBlog> searchInBlogPosts(const QString &phrase);
-
+    virtual QList<ESLPodcastUserNote> getUserNotes();
 private:
     void init();
 private:
@@ -35,6 +35,8 @@ private:
     QList<ESLBlog> m_blogPosts;
     QHash<int, QList<ESLGlossary> > m_glossaries;
     QHash<int, QList<ESLCategory> > m_podCategories;
+    QList<ESLPodcastUserNote> m_userNotes;
+   
 };
 
 #endif // ESLFILEDATAPROVIDER_H
