@@ -62,6 +62,10 @@ MainWindow::MainWindow(QWidget *parent) :
     filterPodcastByTitle();
     filterBlog();
     showPost();
+    //---
+    ui->splitter_2->setStretchFactor(0, 2);
+    ui->splitter_2->setStretchFactor(1, 1);
+
 }
 
 MainWindow::~MainWindow()
