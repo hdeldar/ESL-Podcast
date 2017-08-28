@@ -28,7 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    QSettings settings("ESL Podcast", "ESL Podcast");
+    m_podId = settings.value("lastPodcast", 1).toInt();
+    diserialize();
+    
 //    QSystemTrayIcon *trayIcon = new QSystemTrayIcon(this);
 
 //    connect(trayIcon,SIGNAL(activated(QSystemTrayIcon::ActivationReason)),this,
@@ -84,7 +87,7 @@ void MainWindow::filterPodcastByTitle()
 {
     QList<ESLPodcast> pods = m_pEslDataProvider->filterPodcastsByTitle(
                 m_filterWord, m_selectedCat, m_selectedYear);
-    m_userNotes = m_pEslDataProvider->getUserNotes();
+    //m_userLastNote = m_pEslDataProvider->getLastUserNote().note();
     m_pPodcastModel->setItemList(pods);
     m_pPodcastDeleagte->setFilterText(m_filterWord);
     ui->tableView_podcast_list->setModel(m_pPodcastModel);
@@ -100,7 +103,7 @@ void MainWindow::filterPodcastByTitle()
         m_firstTime = false;
         QModelIndex rootIndex = ui->tableView_podcast_list->rootIndex();
         QSettings settings("ESL Podcast", "ESL Podcast");
-        int lastPodId = settings.value("lastPodcast").toInt();
+        int lastPodId = settings.value("lastPodcast", 1).toInt();
         int lastIndex = 0;
         for (int i = 0; i < pods.length(); ++i) {
             if(pods.at(i).id() == lastPodId)
@@ -120,7 +123,7 @@ void MainWindow::filterBlog(const QString &phrase)
     m_pBlogModel->setItemList(m_blogList);
 
     QSettings settings("ESL Podcast", "ESL Podcast");
-    int lastPostIndex = settings.value("lastPost").toInt();
+    int lastPostIndex = settings.value("lastPost", 1).toInt();
 
     int fs = settings.value("postFontSize").toInt();
     if(fs >= 18)
@@ -223,54 +226,50 @@ void MainWindow::showPodcastInfo()
                 .arg(m_postFontSize + 2);
     }
     ui->textBrowser_glossary->setHtml(glossHtml);
-    ui->textEdit->setText(getUserNote(m_podId));
+    ui->textEdit->setText(getUserNote());
 }
 
 
-QString MainWindow::getUserNote(int podcastId)
+QString MainWindow::getUserNote()
 {
-   for (auto u : m_userNotes)
-   {
-      if (u.id() == podcastId)
-         return u.note();
-   }
-   return "";
+   return m_userLastNote;
 }
 
-void MainWindow::setUserNote(int podcastId, QString note)
+void MainWindow::setUserNote(QString note)
 {
-   if(note.isEmpty())
-      return;
-   bool bfind = false;
-   for (ESLPodcastUserNote& u : m_userNotes)
-   {
-      if (u.id() == podcastId)
-      {
-         bfind = true;
-         u.setNote(note);
-         break;
-      }
-   }
-   if (!bfind)
-   {
-      m_userNotes.append(ESLPodcastUserNote(podcastId, note));
-      bfind = true;
-   }
-   //if(bfind)
-   //   serialize();
+   m_userLastNote = note;
+   if (ui->textEdit->toPlainText() != m_userLastNote)
+      ui->textEdit->setText(note);
+   //serialize();
 }
 
 void MainWindow::serialize()
 {
-   QString output = QCoreApplication::applicationDirPath() + "/db/UserNotes.btk";
+   QString output = QCoreApplication::applicationDirPath() + QString("/db/UserNotes%1.btk").arg(m_podId);
    QFile outUser(output);
    if (!outUser.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
    {
       qDebug() << "can not open output file";
       return;
    }
-   QDataStream dataStreamUser(&outUser);
-   dataStreamUser << m_userNotes;
+//   QTextStream dataStreamUser(&outUser);
+//   dataStreamUser.setCodec("UTF-8");
+//   dataStreamUser << m_userLastNote;
+   outUser.write(m_userLastNote.toUtf8());
+   outUser.flush();
+   outUser.close();
+}
+
+void MainWindow::diserialize()
+{
+   QString output = QCoreApplication::applicationDirPath() + QString("/db/UserNotes%1.btk").arg(m_podId);
+   QFile outUser(output);
+   if (!outUser.open(QIODevice::ReadOnly | QIODevice::Text))
+   {
+      qDebug() << "can not open output file";
+      return;
+   }
+   m_userLastNote = QString::fromUtf8(outUser.readAll());
    outUser.close();
 }
 
@@ -281,7 +280,10 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
 void MainWindow::onPodcastDblClicked(QModelIndex index)
 {
+    serialize();
+    setUserNote("");
     m_podId = index.data(PodcastModel::IdRole).toInt();
+    diserialize();
     QSettings settings("ESL Podcast", "ESL Podcast");
     settings.setValue("lastPodcast", m_podId);
 
@@ -430,7 +432,7 @@ void MainWindow::onBtnDemoClicked()
 
 void MainWindow::onUserNoteTextChanged()
 {
-   setUserNote(m_podId, ui->textEdit->toPlainText());
+   setUserNote(ui->textEdit->toPlainText());
    
 }
 

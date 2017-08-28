@@ -43,9 +43,10 @@ private:
     QString convertTime(qint64 num);
 
     void showPodcastInfo();
-    QString getUserNote(int podcastId);
-    void setUserNote(int podcastId, QString note);
+    QString getUserNote();
+    void setUserNote(QString note);
     void serialize();
+    void diserialize();
     virtual void closeEvent(QCloseEvent *event) override;
 public slots:
     void onPodcastDblClicked(QModelIndex index);
@@ -100,7 +101,7 @@ private:
     QString m_title;
     QString m_script;
     QString m_cultureNote;
-    QList<ESLPodcastUserNote> m_userNotes;
+    QString m_userLastNote;
 };
 
 #endif // MAINWINDOW_H
